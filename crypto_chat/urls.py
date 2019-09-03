@@ -21,7 +21,7 @@ from app.chat import views as chat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/login', core.login, name='user-login'),
-    path('user/register', core.registration, name='user-register'),
+    path('user/login', core.UserSignInView.as_view(), name='user-login'),
+    path('user/register', core.UserSignUpView.as_view(), name='user-register'),
     path('home/', chat.home, name='home-page'),
 ]

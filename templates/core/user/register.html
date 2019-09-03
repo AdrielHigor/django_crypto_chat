@@ -6,9 +6,12 @@
   <div class="content">
     <div id="cadastro">
       <form method="post" action="">
+        {% csrf_token %}
         <h1>Cadastro</h1>
 
-        <p>
+        {{ form }}
+
+        <!-- <p>
           <label for="nome_cad">Username</label>
           <input
             id="nome_cad"
@@ -17,9 +20,9 @@
             type="text"
             placeholder="nome"
           />
-        </p>
+        </p> -->
 
-        <p>
+        <!-- <p>
           <label for="email_cad">E-mail</label>
           <input
             id="email_cad"
@@ -28,9 +31,9 @@
             type="email"
             placeholder="contato@tritium.com"
           />
-        </p>
+        </p> -->
 
-        <p>
+        <!-- <p>
           <label for="senha_cad">Senha</label>
           <input
             id="senha_cad"
@@ -39,9 +42,9 @@
             type="password"
             placeholder="ex. 1234"
           />
-        </p>
+        </p> -->
 
-        <p>
+        <!-- <p>
           <label for="conf_senha">Confirmar Senha</label>
           <input
             id="conf_senha"
@@ -50,7 +53,7 @@
             type="password"
             placeholder="ex . 1234"
           />
-        </p>
+        </p> -->
 
         <p>
           <input type="submit" value="Cadastrar" />
