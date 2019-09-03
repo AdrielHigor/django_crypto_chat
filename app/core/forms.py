@@ -29,9 +29,16 @@ class RegistrationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
-    # username = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    # email = forms.EmailField(max_length=30, required=False, help_text='Optional.')
-
+        
     class Meta:
         model = core.User
         fields = ('username', 'email')
+
+class AuthenticationForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(AuthenticationForm, self).__init__(*args, **kwargs)
+    
+    class Meta:
+        model = core.User
+        fields = ('username', 'password')

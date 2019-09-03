@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
-from app.core.forms import RegistrationForm
-from app.core.models import User
+from app.core import forms, models
 from django.contrib.auth.views import LoginView
-from django.views.generic import FormView
 from django.views.generic.edit import CreateView, UpdateView
 # Create your views here.
 
@@ -30,10 +28,8 @@ from django.views.generic.edit import CreateView, UpdateView
 #         return render(request = request,
 #                     template_name = "core/user/register.html",
 #                     context={"form":form})
-class UserSignInView(LoginView):
-    template_name = 'core/user/register.html'
 
 class UserSignUpView(CreateView):
     template_name = 'core/user/register.html'
-    model = User
-    form_class = RegistrationForm
+    model = models.User
+    form_class = forms.RegistrationForm

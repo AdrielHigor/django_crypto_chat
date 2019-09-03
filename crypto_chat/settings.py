@@ -83,11 +83,19 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'crypto_chat',
         'USER': 'postgres',
-        'PASSWORD': '123456',
+        'PASSWORD': '12345',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
 }
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
+
 
 
 # Password validation
@@ -109,6 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'core.User'
+LOGIN_REDIRECT_URL = '/home/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -131,13 +141,8 @@ STATIC_URL = '/static/'
 
 system = platform.system()
 
-if system == "Windows":
-    STATIC_ROOT = ''
-    STATICFILES_DIRS = ( os.path.join('static'), )
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
+STATIC_ROOT = ''
+STATICFILES_DIRS = ( os.path.join('static'), )
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

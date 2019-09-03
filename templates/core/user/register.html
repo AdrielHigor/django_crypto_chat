@@ -9,7 +9,7 @@
         {% csrf_token %}
         <h1>Cadastro</h1>
 
-        {{ form }}
+        {{ form.as_p }}
 
         <!-- <p>
           <label for="nome_cad">Username</label>

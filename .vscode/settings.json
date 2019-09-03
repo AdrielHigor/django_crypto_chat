@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "c:\\Users\\Blockman2\\Desktop\\django_crypto_chat\\env\\Scripts\\python.exe",
+    "python.pythonPath": "env/bin/python",
     "python.formatting.provider": "autopep8"
 }
