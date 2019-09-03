@@ -140,47 +140,12 @@
   }
   .link a:hover {
     color: #088a00;
-
-    1
-    0
-    0
-
-AdrielHigor/django_crypto_chat
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Security
-Insights
-
-1
-0
-0
-
-AdrielHigor/django_crypto_chat
-Code
-Issues 0
-Pull requests 0
-Projects 0
-Wiki
-Security
-Insights
-django_crypto_chat/
-Uploads are disabled.
-
-File uploads require push access to this repository.
-django_crypto_chat/
-Uploads are disabled.
-
-File uploads require push access to this repository.
     background: #f7f7f7;
     border: 1px solid #4ab3c6;
   }
   
   /* estilos para para ambos os formulários */
-  #cadastro, 
-  #login{
+  #cadastro, #login{
     position: absolute;
     top: 0px;
     width: 88%;	
