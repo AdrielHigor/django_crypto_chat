@@ -5,13 +5,14 @@ from app.core import models as core
 class RegistrationForm(forms.ModelForm):
 
     error_messages = {
-        'password_mismatch': "The two password fields didn't match.",
+        'password_mismatch': "As senhas não coincidem.",
     }
-    password1 = forms.CharField(label="Password",
+
+    password1 = forms.CharField(label="Senha",
         widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Password confirmation",
+    password2 = forms.CharField(label="Confirmar senha",
         widget=forms.PasswordInput,
-        help_text="Enter the same password as above, for verification.")
+        help_text="Repita a senha para a verificação.")
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -38,7 +39,7 @@ class AuthenticationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(AuthenticationForm, self).__init__(*args, **kwargs)
-    
+        
     class Meta:
         model = core.User
         fields = ('username', 'password')
