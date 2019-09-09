@@ -25,5 +25,6 @@ urlpatterns = [
     path('user/login', auth_views.LoginView.as_view(template_name='core/user/login.html'), name='user-login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('user/register', core.UserSignUpView.as_view(), name='user-register'),
+    path('user/<str:pk>/profile/edit', core.UserProfileEditView.as_view(), name='user-edit-profile'),
     path('home/', chat.HomeView.as_view(), name='home-page'),
 ]

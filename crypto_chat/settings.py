@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #Crypto_chat
+    # Crypto_chat
     'app.core',
     'app.chat',
+
+    # Third party apps
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +110,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Channel layer definitions
+# http://channels.readthedocs.org/en/latest/deploying.html#setting-up-a-channel-backend
+CHANNEL_LAYERS = {
+    "default": {
+        # This example app uses the Redis channel layer implementation asgi_redis
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+        "ROUTING": "crypto_chat.routing.channel_routing",  # We will create it in a moment
+    },
+}
+
 AUTH_USER_MODEL = 'core.User'
 LOGIN_REDIRECT_URL = '/home/'
 LOGOUT_REDIRECT_URL = '/user/login'
@@ -133,9 +149,7 @@ STATIC_URL = '/static/'
 system = platform.system()
 
 STATIC_ROOT = ''
-STATICFILES_DIRS = ( os.path.join('static'), )
+STATICFILES_DIRS = (os.path.join('static'), )
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-
-

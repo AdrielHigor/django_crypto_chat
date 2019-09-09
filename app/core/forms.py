@@ -43,3 +43,9 @@ class AuthenticationForm(forms.ModelForm):
     class Meta:
         model = core.User
         fields = ('username', 'password')
+
+class UserProfileEditForm(forms.ModelForm):
+    
+    class Meta:
+        model = core.User
+        fields = ('first_name', 'last_name', 'email', 'password')
