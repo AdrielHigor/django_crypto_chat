@@ -1,7 +1,7 @@
 # django_crypto_chat
 
 ## Proposta
-O objetivo do aplicativo "Crypto Chat", é fazer com que as pessoas se comuniquem de forma ampla e segura, logo o mesmo criptografaria todos os dados de usuário, além das mensagens e anexos enviadas e recebidas.
+O objetivo do aplicativo `Crypto_Chat`, é fazer com que as pessoas se comuniquem de forma ampla e segura, logo o mesmo criptografaria todos os dados de usuário, além das mensagens e anexos enviadas e recebidas.
 
 
 ### Pré-requesitos
@@ -16,9 +16,9 @@ $ python3.7 -m venv env
 $ source env/bin/activate
 ```
 
-Primeiramente, tenha certeza de estar utilizando a versão mais recento do **Python** será preciso ter todos os arquivos necessários em seu computador, para isso copie o link do projeto e depois execute o comando "git clone" no terminal, assim o programa será instalado em sua máquina.
+Primeiramente, tenha certeza de estar utilizando a versão mais recente do **Python** será preciso ter todos os arquivos necessários em seu computador, para isso copie o link do projeto e depois execute o comando `git clone` no terminal, assim o programa será instalado em sua máquina.
 
-```
+```sh
 $ git clone https://github.com/AdrielHigor/django_crypto_chat.git
 ```
 
