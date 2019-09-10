@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser, Permission
 import uuid
 
@@ -21,6 +22,7 @@ class User(AbstractUser):
     # idPublico = models.CharField(max_length=30, verbose_name='ID publico')
     last_seen = models.DateTimeField(auto_now_add=True, blank=False, null=False)
     connection_status = models.BooleanField(null=False, blank=False, default=False)
+    email = models.EmailField(_('email address'), blank=True, unique=True)
 
     def __str__(self):
         return self.username

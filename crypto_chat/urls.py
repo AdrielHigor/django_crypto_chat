@@ -22,6 +22,7 @@ from app.chat import views as chat
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', auth_views.LoginView.as_view(template_name='core/user/login.html'), name='user-login'),
     path('user/login', auth_views.LoginView.as_view(template_name='core/user/login.html'), name='user-login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('user/register', core.UserSignUpView.as_view(), name='user-register'),

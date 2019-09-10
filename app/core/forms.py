@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from app.core import models as core
 
+
 class RegistrationForm(forms.ModelForm):
 
     error_messages = {
@@ -30,22 +31,18 @@ class RegistrationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
-        
+
     class Meta:
         model = core.User
         fields = ('username', 'email')
+
 
 class AuthenticationForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(AuthenticationForm, self).__init__(*args, **kwargs)
-        
+
     class Meta:
         model = core.User
         fields = ('username', 'password')
 
-class UserProfileEditForm(forms.ModelForm):
-    
-    class Meta:
-        model = core.User
-        fields = ('first_name', 'last_name', 'email', 'password')

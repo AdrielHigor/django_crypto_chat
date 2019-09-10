@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from app.core import forms, models
-from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
+from django.urls import reverse_lazy
 from django.urls import reverse
-# Create your views here.
 
 
 class UserSignUpView(CreateView):
@@ -12,12 +11,9 @@ class UserSignUpView(CreateView):
     form_class = forms.RegistrationForm
     success_url = "login"
 
-
 class UserProfileEditView(UpdateView):
-    template_name = 'core/user/profile/settings.html'
     model = models.User
-    form_class = forms.UserProfileEditForm
+    template_name = 'core/user/profile/settings.html'
+    fields = ['first_name', 'last_name', 'email']
+    success_url = reverse_lazy('home-page')
 
-    def post(self, request, *args, **kwargs):
-        print(request)
-        return super().post(request, *args, **kwargs)
