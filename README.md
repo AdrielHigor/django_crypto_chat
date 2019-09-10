@@ -1,8 +1,7 @@
 # django_crypto_chat
 
 ## Proposta
-O objetivo do aplicativo "Crypto Chat", é fazer com que as pessoas se comuniquem de forma ampla e segura, logo o mesmo criptografaria todas as mensagens enviadas e recebidas, de forma que a mensagem
-só apareceria para quem a mesma foi direcionada. O projeto também busca possibilitar o envio de imagens, vídeos e documentos em diversos formatos, todos de forma criptografada.
+O objetivo do aplicativo "Crypto Chat", é fazer com que as pessoas se comuniquem de forma ampla e segura, logo o mesmo criptografaria todos os dados de usuário, além das mensagens e anexos enviadas e recebidas.
 
 
 ### Pré-requesitos
@@ -17,7 +16,7 @@ $ python3.7 -m venv env
 $ source env/bin/activate
 ```
 
-Primeiramente, tenha certeza de estar ultilizando a versão mais recento do **Python** será preciso ter todos os arquivos necessários em seu computador, para isso copie o link do projeto e depois execute o comando "git clone" no terminal, assim o programa será instalado em sua máquina.
+Primeiramente, tenha certeza de estar utilizando a versão mais recento do **Python** será preciso ter todos os arquivos necessários em seu computador, para isso copie o link do projeto e depois execute o comando "git clone" no terminal, assim o programa será instalado em sua máquina.
 
 ```
 $ git clone https://github.com/AdrielHigor/django_crypto_chat.git
@@ -37,7 +36,7 @@ Or
 
 ### DataBase
 
-Com tudo isso instalado, é hora de configurar a conexão com o banco de dados.Na pasta `/crypto_chat/settings` estão as configurações do banco de dados que podem ser alteradas ou ultilizadas para a criação de um banco de dados com o postgresql. 
+Com tudo isso instalado, é hora de configurar a conexão com o banco de dados.Na pasta `/crypto_chat/settings` estão as configurações do banco de dados que podem ser alteradas ou utilizadas para a criação de um banco de dados com o postgresql. 
 
 ```python
 DATABASES = {
@@ -84,7 +83,7 @@ Por fim, o que será acertado a se fazer é iniciar o funcionamento do servidor 
 ## Desenvolvido com
 
 * [Python](https://www.python.org) - Linguagem de programação
-* [Django](https://www.djangoproject.com) - O web framework ultilizado
+* [Django](https://www.djangoproject.com) - O web framework utilizado
 
 ## Autores
 
