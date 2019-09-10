@@ -17,3 +17,15 @@ class UserProfileEditView(UpdateView):
     fields = ['first_name', 'last_name', 'email']
     success_url = reverse_lazy('home-page')
 
+    #Prevent user changing URL <pk> to edit others profiles data
+    def user_passes_test(self, request):
+        if request.user.is_authenticated:
+            self.object = self.get_object()
+            return self.object.pk == request.user.pk
+        return False
+
+    def dispatch(self, request, *args, **kwargs):
+        if not self.user_passes_test(request):
+            return redirect('/user/login')
+        return super(UserProfileEditView, self).dispatch(
+            request, *args, **kwargs)
