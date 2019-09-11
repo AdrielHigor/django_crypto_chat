@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Third party apps
     'widget_tweaks',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crypto_chat.wsgi.application'
 
+# Channels
+ASGI_APPLICATION = 'crypto_chat.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -118,7 +121,6 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [("localhost", 6379)],
         },
-        "ROUTING": "crypto_chat.routing.channel_routing",  # We will create it in a moment
     },
 }
 

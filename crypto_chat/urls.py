@@ -28,4 +28,7 @@ urlpatterns = [
     path('user/register', core.UserSignUpView.as_view(), name='user-register'),
     path('user/<str:pk>/profile/edit', core.UserProfileEditView.as_view(), name='user-edit-profile'),
     path('home/', chat.HomeView.as_view(), name='home-page'),
+    # path('chat/', chat.ChatView.as_view(), name='chat_page'),
+    # path('create/', chat.MessageCreateView.as_view(), name='create'),
+    # path('typing/', chat.MessageTypingView.as_view(), name='typing'),
 ]
