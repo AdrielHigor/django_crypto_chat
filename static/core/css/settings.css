@@ -1,9 +1,21 @@
 body {
-  background: #eee;
+  margin: 10px;
+  background-image: radial-gradient(circle, #20262d, #070809);
 }
 .widget-author {
   margin-bottom: 58px;
 }
+
+.card{
+  background-color: #2d353f;
+  border-radius: 5px;
+}
+
+.color-font{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e7e7e7
+}
+
 .author-card {
   position: relative;
   padding-bottom: 48px;
