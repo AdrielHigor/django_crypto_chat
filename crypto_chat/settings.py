@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+FIELD_ENCRYPTION_KEY = os.environ.get('FIELD_ENCRYPTION_KEY', '')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
     # Third party apps
     'widget_tweaks',
     'channels',
+    'imagekit',
+    'encrypted_model_fields',
 ]
 
 MIDDLEWARE = [
@@ -85,8 +88,12 @@ ASGI_APPLICATION = 'crypto_chat.routing.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crypto_chat',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
@@ -146,5 +153,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = ''
 STATICFILES_DIRS = (os.path.join('static'), )
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')

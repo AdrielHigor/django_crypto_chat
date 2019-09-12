@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser, Permission
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 from django.db.models import Q
 import uuid
 
@@ -20,6 +22,10 @@ class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_permissions = models.ManyToManyField(
         Permission, blank=True, related_name="uuiduser_set", related_query_name="user")
+    picture = models.ImageField(
+        null=False, blank=True, verbose_name='picture', upload_to='user/profile_picture/', default='user/profile_picture/default.png')
+    picture_thumb = ImageSpecField(source='picture', processors=[
+                                   ResizeToFill(200, 200)], format='JPEG', options={'quality': 60})
     last_seen = models.DateTimeField(
         auto_now_add=True, blank=False, null=False)
     connection_status = models.BooleanField(

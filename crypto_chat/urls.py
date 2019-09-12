@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 from app.core import views as core
 from app.chat import views as chat
@@ -28,8 +30,9 @@ urlpatterns = [
     path('user/register', core.UserSignUpView.as_view(), name='user-register'),
     path('user/<str:pk>/profile/edit', core.UserProfileEditView.as_view(), name='user-edit-profile'),
     path('home/', chat.HomeView.as_view(), name='home-page'),
+    path('home/chat/<str:pk>', chat.ChatView.as_view(), name='home-chat-page'),
     path('user/<str:pk>/profile', core.UserProfileView.as_view(), name='user-profile'),
     # path('chat/', chat.ChatView.as_view(), name='chat_page'),
     # path('create/', chat.MessageCreateView.as_view(), name='create'),
     # path('typing/', chat.MessageTypingView.as_view(), name='typing'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

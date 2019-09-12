@@ -1,0 +1,14 @@
+{% for contact in list %}
+<li class="contact">
+  <a href="/home/chat/{{ contact.id }}">
+    <div class="wrap">
+      <span class="contact-status online"></span>
+      <img src="{{ contact.picture_thumb.url }}" alt="" />
+      <div class="meta">
+        <p class="name">{{ contact.chat_name }}</p>
+        <p class="preview">You just got LITT up, Mike.</p>
+      </div>
+    </div>
+  </a>
+</li>
+{% endfor %}

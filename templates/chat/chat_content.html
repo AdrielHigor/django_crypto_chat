@@ -1,0 +1,26 @@
+<div class="contact-profile">
+  <img src="{{ contact.picture_thumb.url }}" alt="" />
+  <p>{{ contact.chat_name }}</p>
+</div>
+<div class="messages">
+  <ul>
+    {% for message in list %}
+      {% if user.pk == message.author.pk %}
+        <li class="replies">
+          <img src="{{ message.author.picture_thumb.url }}" alt="" />
+          <p>
+            {{ message.content }}
+          </p>
+        </li>
+      {% endif %}
+      {% if user.pk != message.author.pk %}
+        <li class="sent">
+          <img src="{{ message.author.picture_thumb.url }}" alt="" />
+          <p>
+            {{ message.content }}
+          </p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

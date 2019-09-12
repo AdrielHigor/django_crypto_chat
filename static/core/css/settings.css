@@ -1,6 +1,6 @@
 body {
   margin: 10px;
-  background-image: radial-gradient(circle, #20262d, #070809);
+  background: #eee;
 }
 .widget-author {
   margin-bottom: 58px;

@@ -1,6 +1,7 @@
-from django.views.generic import TemplateView  # , CreateView, View
+from django.views.generic import TemplateView, View  # , CreateView, View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from app.chat.models import Chat, Message
 # from django.contrib.auth.mixins import LoginRequiredMixin
 # from django.http import HttpResponse
 # from django.http import JsonResponse
@@ -13,7 +14,25 @@ from django.utils.decorators import method_decorator
 
 @method_decorator(login_required(login_url='/user/login'), name='dispatch')
 class HomeView(TemplateView):
-    template_name = "chat/chat.html"
+    context_object_name = 'home_list'
+    template_name = "chat/index.html"
+    teste = None
+
+    def get_context_data(self, **kwargs):
+        print(self.kwargs['pk'])
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['contact_list'] = Chat.objects.all()
+        context['message_list'] = Message.objects.filter(chat=self.kwargs['pk'])
+        context['contact'] = Chat.objects.get(pk=self.kwargs['pk'])
+        # context['festival_list'] = Festival.objects.all()
+        return context
+    
+class ChatView(HomeView):
+
+    def get(self, request, *args, **kwargs):
+        return super(HomeView, self).get(request, *args, **kwargs)
+
+
 
 # class ChatView(LoginRequiredMixin, TemplateView):
 #     template_name = 'chat/chat.html'
