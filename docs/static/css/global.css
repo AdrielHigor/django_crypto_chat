@@ -32,6 +32,10 @@ body {
 .content {
     display: flex;
     flex: 3;
+    width: 60%;
+    align-self: center;
+    flex-direction: column;
+    text-align: justify;
 }
 
 .title {
@@ -44,4 +48,10 @@ body {
     color: #ffffff;
     text-align: center;
     font-size: 14px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
 }
