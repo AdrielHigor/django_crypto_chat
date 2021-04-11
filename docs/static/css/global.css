@@ -22,7 +22,7 @@ body {
 
 .topContent {
     display: flex;
-    flex: 2;
+    flex: 1;
     background: radial-gradient(circle, rgba(9, 15, 125, 1) 0%, rgba(9, 15, 125, 1) 0%, rgba(0, 212, 255, 1) 100%);
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 
 .content {
     display: flex;
-    flex: 3;
+    flex: 2;
     width: 60%;
     align-self: center;
     flex-direction: column;
@@ -54,4 +54,17 @@ section {
     display: flex;
     flex-direction: column;
     text-align: justify;
+}
+
+.code {
+    padding: 5px;
+    background-color: #d1d5da;
+    border-radius: 5px;
+}
+
+.codeText {
+    padding: 0;
+    margin: 8px;
+    font-family: monospace;
+    font-size: 14px;
 }
