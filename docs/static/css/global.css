@@ -67,3 +67,9 @@ section {
     font-family: monospace;
     font-size: 14px;
 }
+
+.codeTextMarker {
+    font-family: monospace;
+    background-color: #d1d5da;
+    font-size: 14px;
+}

@@ -72,6 +72,88 @@
                     </p>
                 </div>
             </section>
+            <section>
+                <h1>Database</h1>
+                <p>
+                    Com tudo isso instalado, é hora de configurar a conexão com o banco de dados. Na pasta
+                    <mark class="codeTextMarker">/crypto_chat/settings.py</mark> estão as configurações do banco de
+                    dados
+                    que podem ser alteradas
+                    ou utilizadas
+                    para a criação de um banco de dados com o postgresql.
+                </p>
+                <div class="code">
+                    <pre class="codeText">
+<strong style="color: coral; font-weight: normal;">DATABASES</strong> = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crypto_chat',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
+    }
+}
+                    </pre>
+                </div>
+            </section>
+            <section>
+                <h1>Migrations</h1>
+                <p>
+                    Com todos os passos anteriores feitos com sucesso, agora será preciso aplicar o comando
+                    <mark class="codeTextMarker">makemigrations</mark> e <mark class="codeTextMarker">migrate</mark>.
+                </p>
+                <div class="code">
+                    <p class="codeText">
+                        (venv)$ cd 'path_to_project'/django_crypto_chat
+                    </p>
+                    <p class="codeText">
+                        (venv)$ python manage.py makemigrations core
+                    </p>
+                    <p class="codeText">
+                        (venv)$ python manage.py makemigrations chat
+                    </p>
+                    <p class="codeText">
+                        (venv)$ python manage.py migrate
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h1>Criando um administrador</h1>
+                <p>
+                    Para ter acesso às ferramentas de administrador do sistema, é preciso criar uma conta como
+                    <mark class="codeTextMarker">superuser</mark>, assim como mostra o exemplo:
+                </p>
+                <div class="code">
+                    <p class="codeText">
+                        (venv)$ python manage.py createsuperuser
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h1>Iniciando o servidor</h1>
+                <p>
+                    Por fim, o que será acertado a se fazer é iniciar o funcionamento do servidor com o comando
+                    <mark class="codeTextMarker">runserver</mark>.
+                </p>
+                <div class="code">
+                    <p class="codeText">
+                        (venv)$ cd django_crypto_chat
+                    </p>
+                    <p class="codeText">
+                        (venv)$ python manage.py runserver
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h1>Desenvolvido com</h1>
+                <ul>
+                    <li><a style="text-decoration: none;" href="https://www.python.org/">Python</a> - Linguagem de
+                        programação</li>
+                    <li><a style="text-decoration: none;" href="https://www.djangoproject.com/">Django</a> - O web
+                        framework utilizado</li>
+                </ul>
+            </section>
         </div>
     </div>
 </body>
